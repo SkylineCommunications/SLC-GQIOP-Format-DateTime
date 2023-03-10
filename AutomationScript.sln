@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Internal", "Internal", "{2FE672AB-2A1E-485F-988E-0CCA42D54D3B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{9F2C3B8B-7271-45DA-B0CC-53E6599EE140}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dlls", "Dlls", "{F2A23D75-0470-4F5C-95A3-C7E759736A8E}"
+	ProjectSection(SolutionItems) = preProject
+		Dlls\readme.txt = Dlls\readme.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{58EFB022-DB11-4A5E-8D20-858E172001FB}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\readme.txt = Documentation\readme.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code Analysis", "Code Analysis", "{D403F9BE-9E54-41FE-93FA-757F1A422953}"
+	ProjectSection(SolutionItems) = preProject
+		Internal\Code Analysis\qaction-debug.ruleset = Internal\Code Analysis\qaction-debug.ruleset
+		Internal\Code Analysis\qaction-release.ruleset = Internal\Code Analysis\qaction-release.ruleset
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SLC-GQIOP-Format DateTime", "SLC-GQIOP-Format DateTime", "{46C24223-F9EE-4B57-A5B0-9AEDBD546AF1}"
+	ProjectSection(SolutionItems) = preProject
+		SLC-GQIOP-Format DateTime.xml = SLC-GQIOP-Format DateTime.xml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D403F9BE-9E54-41FE-93FA-757F1A422953} = {2FE672AB-2A1E-485F-988E-0CCA42D54D3B}
+		{46C24223-F9EE-4B57-A5B0-9AEDBD546AF1} = {9F2C3B8B-7271-45DA-B0CC-53E6599EE140}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {94ACEF0F-955F-4BE5-83D7-D298EF501334}
+	EndGlobalSection
+EndGlobal
