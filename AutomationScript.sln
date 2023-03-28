@@ -28,13 +28,29 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SLC-GQIOP-Format DateTime",
 		SLC-GQIOP-Format DateTime.xml = SLC-GQIOP-Format DateTime.xml
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Actions", "Actions", "{7E1A3791-10FF-49F7-BA4E-5DAA229F04E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLC-GQIOP-Format DateTime_1", "SLC-GQIOP-Format DateTime_1\SLC-GQIOP-Format DateTime_1.csproj", "{2CADB4F0-68DE-471B-BDA8-C4489A81B8BC}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2CADB4F0-68DE-471B-BDA8-C4489A81B8BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CADB4F0-68DE-471B-BDA8-C4489A81B8BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CADB4F0-68DE-471B-BDA8-C4489A81B8BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CADB4F0-68DE-471B-BDA8-C4489A81B8BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D403F9BE-9E54-41FE-93FA-757F1A422953} = {2FE672AB-2A1E-485F-988E-0CCA42D54D3B}
 		{46C24223-F9EE-4B57-A5B0-9AEDBD546AF1} = {9F2C3B8B-7271-45DA-B0CC-53E6599EE140}
+		{7E1A3791-10FF-49F7-BA4E-5DAA229F04E0} = {46C24223-F9EE-4B57-A5B0-9AEDBD546AF1}
+		{2CADB4F0-68DE-471B-BDA8-C4489A81B8BC} = {7E1A3791-10FF-49F7-BA4E-5DAA229F04E0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {94ACEF0F-955F-4BE5-83D7-D298EF501334}

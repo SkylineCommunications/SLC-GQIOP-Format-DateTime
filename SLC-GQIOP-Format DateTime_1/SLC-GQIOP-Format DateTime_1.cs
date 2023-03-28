@@ -24,7 +24,14 @@ public class MyCustomOperator : IGQIRowOperator, IGQIInputArguments
 
 	public void HandleRow(GQIEditableRow row)
 	{
-		DateTime dt = row.GetValue<DateTime>(_dateColumn);
-		row.SetDisplayValue(_dateColumn, dt.ToString(_format));
+		try
+		{
+			DateTime dt = row.GetValue<DateTime>(_dateColumn);
+			row.SetDisplayValue(_dateColumn, dt.ToString(_format));
+		}
+		catch (Exception)
+		{
+			// Catch empty cells
+		}
 	}
 }
