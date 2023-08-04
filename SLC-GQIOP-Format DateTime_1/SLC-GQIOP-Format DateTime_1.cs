@@ -5,7 +5,7 @@ using Skyline.DataMiner.Analytics.GenericInterface;
 public class MyCustomOperator : IGQIRowOperator, IGQIInputArguments
 {
 	private GQIColumnDropdownArgument _dateColumnArg = new GQIColumnDropdownArgument("Date column") { IsRequired = true, Types = new GQIColumnType[] { GQIColumnType.DateTime } };
-	private GQIStringArgument _formatArg = new GQIStringArgument("Format") { IsRequired = true, DefaultValue= "dd/MM/yyyy hh:mm:ss" };
+	private GQIStringArgument _formatArg = new GQIStringArgument("Format") { IsRequired = true, DefaultValue= "dd/MM/yyyy hh:MM:ss" };
 
 	private string _format;
 	private GQIColumn _dateColumn;
