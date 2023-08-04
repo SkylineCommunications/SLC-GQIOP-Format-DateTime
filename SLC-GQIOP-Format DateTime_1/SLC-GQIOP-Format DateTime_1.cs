@@ -9,6 +9,7 @@ public class MyCustomOperator : IGQIRowOperator, IGQIInputArguments
 
 	private string _format;
 	private GQIColumn _dateColumn;
+	private TimeSpan _offset;
 
 	public GQIArgument[] GetInputArguments()
 	{
@@ -19,6 +20,8 @@ public class MyCustomOperator : IGQIRowOperator, IGQIInputArguments
 	{
 		_dateColumn = args.GetArgumentValue(_dateColumnArg);
 		_format = args.GetArgumentValue(_formatArg);
+		_offset = TimeZoneInfo.Local.GetUtcOffset(DateTime.UtcNow);
+
 		return new OnArgumentsProcessedOutputArgs();
 	}
 
@@ -26,7 +29,7 @@ public class MyCustomOperator : IGQIRowOperator, IGQIInputArguments
 	{
 		try
 		{
-			DateTime dt = row.GetValue<DateTime>(_dateColumn);
+			DateTime dt = row.GetValue<DateTime>(_dateColumn) + _offset;
 			row.SetDisplayValue(_dateColumn, dt.ToString(_format));
 		}
 		catch (Exception)
