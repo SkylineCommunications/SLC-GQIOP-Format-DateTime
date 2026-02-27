@@ -1,0 +1,63 @@
+name: DataMiner CICD Automation
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches:
+      - '**'
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+.[0-9]+"
+      - "[0-9]+.[0-9]+.[0-9]+.[0-9]+-**"
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+
+  CI:
+    uses: SkylineCommunications/_ReusableWorkflows/.github/workflows/Automation Master Workflow.yml@main
+    with:
+      sonarCloudProjectName: SkylineCommunications_SLC-GQIOP-Format-DateTime
+    # secrets:
+      # These secrets are only required when:
+      # - The repository is not part of the SkylineCommunications GitHub Organization.
+      # - You want to publish to a DataMiner Catalog belonging to a different organization than Skyline Communications.
+
+      # The API key used for authentication with the DataMiner Catalog.
+      # Generate this key in the DCP Admin app: https://admin.dataminer.services/
+      # Uncomment when publishing to a Catalog of a different organization than Skyline Communications.
+      # api-key: ${{ secrets.DATAMINER_TOKEN }}
+
+      # Token used for SonarCloud integration.
+      # Not needed when working within the SkylineCommunications organization.
+      # sonarCloudToken: ${{ secrets.SONAR_TOKEN }}
+
+      # Optional OIDC inputs, required only when running workflows from a repository
+      # outside of the SkylineCommunications GitHub Organization and you don't provide individual secrets.
+      #
+      # A prerequisite is an Azure Key Vault named `kv-master-cicd-secrets`,
+      # which must contain all required secrets as defined in the reusable workflows under `secret_names=...`.
+
+      # oidc-client-id: ${{ secrets.OIDC_CLIENT_ID }}
+      # oidc-tenant-id: ${{ secrets.OIDC_TENANT_ID }}
+      # oidc-subscription-id: ${{ secrets.OIDC_SUBSCRIPTION_ID }}
+
+    
+  # # Optional 0 or More CD Jobs as needed
+  # CD:
+  #   if: github.ref_type == 'tag'
+  #   environment: production
+  #   name: CD
+  #   runs-on: ubuntu-latest
+  #   needs: CI
+
+  #   steps:
+  #     - uses: actions/checkout@v4
+        
+  #     - name: Install .NET Tools
+  #       run: dotnet tool install -g Skyline.DataMiner.CICD.Tools.DataMinerDeploy
+
+  #     - name: Deploy to DataMiner
+  #       run: dataminer-package-deploy from-catalog --catalog-id "TODO:Fill-In-Catalog-GUID" --catalog-version ${{ github.ref_name }} --agent-destination-id "TODO:Fill-In-DataMiner-Agent-GUID" --dm-catalog-token ${{ secrets.DATAMINER_TOKEN }}
