@@ -21,7 +21,7 @@
 			<Value><![CDATA[[Project:SLC-GQIOP-Format DateTime_1]]]></Value>
 			<!--<Param type="debug">true</Param>-->
 			<Param type="preCompile">true</Param>
-			<Param type="libraryName">FormatDateTime</Param>
+			<Param type="libraryName">GQI_FormatDataTime</Param>
 			<Message></Message>
 		</Exe>
 	</Script>

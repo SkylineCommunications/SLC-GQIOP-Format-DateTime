@@ -28,9 +28,7 @@ public class MyCustomOperator : IGQIRowOperator, IGQIInputArguments
 		try
 		{
 			DateTime dt = row.GetValue<DateTime>(_dateColumn);
-			TimeSpan _offset = TimeZoneInfo.Local.GetUtcOffset(dt);
-			dt = dt + _offset;
-			row.SetDisplayValue(_dateColumn, dt.ToString(_format));
+			row.SetDisplayValue(_dateColumn, dt.ToLocalTime().ToString(_format));
 		}
 		catch (Exception)
 		{
