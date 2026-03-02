@@ -3,9 +3,9 @@
 	<Name>SLC-GQIOP-Format DateTime</Name>
 	<Description></Description>
 	<Type>Automation</Type>
-	<Author>SKYLINE2\Matthijs</Author>
+	<Author>SKYLINE2\MFA</Author>
 	<CheckSets>FALSE</CheckSets>
-	<Folder></Folder>
+	<Folder>GQI/Operators</Folder>
 
 	<Protocols>
 	</Protocols>
@@ -20,6 +20,8 @@
 		<Exe id="1" type="csharp">
 			<Value><![CDATA[[Project:SLC-GQIOP-Format DateTime_1]]]></Value>
 			<!--<Param type="debug">true</Param>-->
+			<Param type="preCompile">true</Param>
+			<Param type="libraryName">FormatDateTime</Param>
 			<Message></Message>
 		</Exe>
 	</Script>
